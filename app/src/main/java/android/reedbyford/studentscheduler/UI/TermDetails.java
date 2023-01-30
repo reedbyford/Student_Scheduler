@@ -9,17 +9,17 @@ import android.view.View;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class TermList extends AppCompatActivity {
+public class TermDetails extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_term_list);
-        FloatingActionButton fab=findViewById(R.id.floatingActionButton);
+        setContentView(R.layout.activity_term_details);
+        FloatingActionButton fab=findViewById(R.id.floatingActionButton2);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(TermList.this, TermDetails.class);
+                Intent intent=new Intent(TermDetails.this, CourseDetails.class);
                 startActivity(intent);
             }
         });
