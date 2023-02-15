@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.reedbyford.studentscheduler.R;
 import android.reedbyford.studentscheduler.database.Repository;
 import android.reedbyford.studentscheduler.entities.Course;
+import android.reedbyford.studentscheduler.entities.Instructor;
 import android.reedbyford.studentscheduler.entities.Term;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -39,8 +40,6 @@ public class MainActivity extends AppCompatActivity {
                 Term term=new Term(0, "Term 1", "09-01-2022", "02-28-2023");
                 Repository repository=new Repository(getApplication());
                 repository.insert(term);
-                Course course=new Course(0, "Introduction to IT - C182", "09-01-2022", "09-04-2023", "Completed", 0);
-                repository.insert(course);
                 return true;
         }
         return super.onOptionsItemSelected(item);

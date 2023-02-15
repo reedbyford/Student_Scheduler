@@ -34,6 +34,10 @@ public class Course {
         this.notes = notes;
     }
 
+    public Course() {
+
+    }
+
     public int getCourseID() {
         return courseID;
     }
