@@ -9,7 +9,7 @@ import java.util.List;
 @Entity(tableName = "courses")
 public class Course {
     @PrimaryKey(autoGenerate = true)
-    private int courseID;
+    private int courseId;
     private String title;
     private String startDate;
     private String endDate;
@@ -22,8 +22,8 @@ public class Course {
     @Ignore
     private List<Note> notes;
 
-    public Course(int courseID, String title, String startDate, String endDate, String status, int termId, List<Instructor> instructors, List<Assessment> assessments, List<Note> notes) {
-        this.courseID = courseID;
+    public Course(int courseId, String title, String startDate, String endDate, String status, int termId, List<Instructor> instructors, List<Assessment> assessments, List<Note> notes) {
+        this.courseId = courseId;
         this.title = title;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -38,12 +38,12 @@ public class Course {
 
     }
 
-    public int getCourseID() {
-        return courseID;
+    public int getCourseId() {
+        return courseId;
     }
 
-    public void setCourseID(int courseID) {
-        this.courseID = courseID;
+    public void setCourseId(int courseId) {
+        this.courseId = courseId;
     }
 
     public String getTitle() {
