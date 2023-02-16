@@ -6,24 +6,24 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "terms")
 public class Term {
     @PrimaryKey(autoGenerate = true)
-    private int termID;
+    private int termId;
     private String title;
     private String startDate;
     private String endDate;
 
-    public Term(int termID, String title, String startDate, String endDate) {
-        this.termID = termID;
+    public Term(int termId, String title, String startDate, String endDate) {
+        this.termId = termId;
         this.title = title;
         this.startDate = startDate;
         this.endDate = endDate;
     }
 
-    public int getTermID() {
-        return termID;
+    public int getTermId() {
+        return termId;
     }
 
-    public void setTermID(int termID) {
-        this.termID = termID;
+    public void setTermId(int termId) {
+        this.termId = termId;
     }
 
     public String getTitle() {
@@ -48,6 +48,16 @@ public class Term {
 
     public void setEndDate(String endDate) {
         this.endDate = endDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Term{" +
+                "termId=" + termId +
+                ", title='" + title + '\'' +
+                ", startDate='" + startDate + '\'' +
+                ", endDate='" + endDate + '\'' +
+                '}';
     }
 }
 
