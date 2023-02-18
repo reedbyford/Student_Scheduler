@@ -5,67 +5,82 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UI.TermDetails">
+
     <ScrollView
         android:id="@+id/scrollView"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_width="414dp"
+        android:layout_height="195dp"
         android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Term Title"/>
-            <EditText
-                android:id="@+id/termtitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="Term One"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Term Start Date"/>
+                    android:text="Term Title" />
+
+                <EditText
+                    android:id="@+id/termtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Term One" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Term Start Date" />
+
                 <EditText
                     android:id="@+id/termstartdate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="09-01-2022"/>
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:hint="09-01-2022" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Term End Date"/>
+                    android:text="Term End Date" />
+
                 <EditText
                     android:id="@+id/termenddate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="02-28-2023"/>
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:hint="02-28-2023" />
             </LinearLayout>
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <Button
+                    android:id="@+id/saveterm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/saveterm"
-                    android:text="Save"/>
+                    android:text="Save" />
             </androidx.appcompat.widget.LinearLayoutCompat>
         </LinearLayout>
 
@@ -84,7 +99,10 @@
         android:id="@+id/courserecyclerview"
         android:layout_width="409dp"
         android:layout_height="373dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
