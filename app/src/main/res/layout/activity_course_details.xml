@@ -26,13 +26,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Course Title" />
+                    android:text="@string/course_title" />
 
                 <EditText
                     android:id="@+id/coursetitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Chemistry" />
+                    android:hint="@string/chemistry" />
 
             </LinearLayout>
 
@@ -44,13 +44,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Course Start Date" />
+                    android:text="@string/course_start_date" />
 
                 <EditText
                     android:id="@+id/coursestartdate"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="03-31-22" />
+                    android:layout_height="50dp"
+                    android:hint="@string/_03_31_22" />
             </LinearLayout>
 
             <LinearLayout
@@ -61,13 +61,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Course End Date" />
+                    android:text="@string/course_end_date" />
 
                 <EditText
                     android:id="@+id/courseenddate"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="04-31-22" />
+                    android:layout_height="50dp"
+                    android:hint="@string/_04_31_22" />
             </LinearLayout>
 
             <LinearLayout
@@ -78,13 +78,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Status" />
+                    android:text="@string/status" />
 
                 <EditText
                     android:id="@+id/coursestatus"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="Completed" />
+                    android:layout_height="50dp"
+                    android:hint="@string/completed" />
             </LinearLayout>
 
 
@@ -97,7 +97,7 @@
                     android:id="@+id/savecourse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Save" />
+                    android:text="@string/save" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -107,14 +107,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Date Picker" />
+                    android:text="@string/date_picker" />
 
                 <EditText
                     android:id="@+id/editdate"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:inputType="none"
-                    android:hint="12/17/2022" />
+                    android:hint="@string/_12_17_2022" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -123,17 +123,19 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Edit Note" />
+                    android:text="@string/edit_note" />
 
                 <EditText
                     android:id="@+id/editnote"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="note" />
+                    android:hint="@string/note" />
             </androidx.appcompat.widget.LinearLayoutCompat>
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
+
                 <Spinner
                     android:id="@+id/spinner"
                     android:layout_width="409dp"

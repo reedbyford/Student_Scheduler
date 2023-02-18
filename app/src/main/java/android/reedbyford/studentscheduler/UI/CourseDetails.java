@@ -2,6 +2,7 @@ package android.reedbyford.studentscheduler.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.DatePickerDialog;
 import android.app.PendingIntent;
@@ -53,6 +54,7 @@ public class CourseDetails extends AppCompatActivity {
         editStartDate = findViewById(R.id.coursestartdate);
         editEndDate = findViewById(R.id.courseenddate);
         editStatus = findViewById(R.id.coursestatus);
+        editNote = findViewById(R.id.editnote);
         String myFormat = "MM/dd/yy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
         editStartDate.setText(sdf.format(new Date()));
@@ -73,6 +75,7 @@ public class CourseDetails extends AppCompatActivity {
                 editNote.setText(termArrayAdapter.getItem(i).toString());
             }
 
+            @SuppressLint("SetTextI18n")
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
                 editNote.setText("Nothing Selected");
@@ -153,7 +156,7 @@ public class CourseDetails extends AppCompatActivity {
                 sendIntent.putExtra(Intent.EXTRA_TEXT, editNote.getText().toString());
                 sendIntent.putExtra(Intent.EXTRA_TITLE, "Message Title");
                 sendIntent.setType("text/plain");
-                Intent shareIntent = Intent.createChooser();
+                Intent shareIntent = Intent.createChooser(sendIntent, null);
                 startActivity(shareIntent);
                 return true;
             case R.id.notifystart:

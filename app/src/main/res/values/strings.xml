@@ -2,4 +2,20 @@
     <string name="app_name">Student Scheduler</string>
     <string name="channel_name">StudentChannel</string>
     <string name="channel_description">Notifications for Student Scheduler App</string>
+    <string name="share" />
+    <string name="notify_start" />
+    <string name="notify_end" />
+    <string name="_03_31_22">03-31-22</string>
+    <string name="course_start_date">Course Start Date</string>
+    <string name="course_end_date">Course End Date</string>
+    <string name="status">Status</string>
+    <string name="chemistry">Chemistry</string>
+    <string name="_04_31_22">04-31-22</string>
+    <string name="completed">Completed</string>
+    <string name="save">Save</string>
+    <string name="date_picker">Date Picker</string>
+    <string name="_12_17_2022">12/17/2022</string>
+    <string name="edit_note">Edit Note</string>
+    <string name="note">note</string>
+    <string name="course_title">Course Title</string>
 </resources>
