@@ -82,7 +82,7 @@ public class CourseDetails extends AppCompatActivity {
             }
         });
         Button button = findViewById(R.id.savecourse);
-        button.setOnClickListener(new View.OnClickListener() {
+        /*button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (courseId == -1) {
@@ -93,7 +93,7 @@ public class CourseDetails extends AppCompatActivity {
                     repository.update(course);
                 }
             }
-        });
+        });*/
         editStartDate.setOnClickListener(new View.OnClickListener() {
 
             @Override
