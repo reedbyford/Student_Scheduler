@@ -6,28 +6,28 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "assessments")
 public class Assessment {
     @PrimaryKey(autoGenerate = true)
-    private int assessmentID;
+    private int assessmentId;
     private String type;
     private String title;
     private String startDate;
     private String endDate;
-    private int courseID;
+    private int courseId;
 
-    public Assessment(int assessmentID, String type, String title, String startDate, String endDate, int courseID) {
-        this.assessmentID = assessmentID;
+    public Assessment(int assessmentId, String type, String title, String startDate, String endDate, int courseId) {
+        this.assessmentId = assessmentId;
         this.type = type;
         this.title = title;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.courseID = courseID;
+        this.courseId = courseId;
     }
 
-    public int getAssessmentID() {
-        return assessmentID;
+    public int getAssessmentId() {
+        return assessmentId;
     }
 
-    public void setAssessmentID(int assessmentID) {
-        this.assessmentID = assessmentID;
+    public void setAssessmentId(int assessmentId) {
+        this.assessmentId = assessmentId;
     }
 
     public String getType() {
@@ -62,11 +62,11 @@ public class Assessment {
         this.endDate = endDate;
     }
 
-    public int getCourseID() {
-        return courseID;
+    public int getCourseId() {
+        return courseId;
     }
 
-    public void setCourseID(int courseID) {
-        this.courseID = courseID;
+    public void setCourseId(int courseId) {
+        this.courseId = courseId;
     }
 }
