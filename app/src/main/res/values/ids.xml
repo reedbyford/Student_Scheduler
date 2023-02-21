@@ -2,4 +2,5 @@
 <resources>
     <item name="editnotes" type="id" />
     <item name="deletecourse" type="id" />
+    <item name="textViewcoursestartdate" type="id" />
 </resources>

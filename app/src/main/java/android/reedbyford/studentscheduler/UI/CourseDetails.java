@@ -24,6 +24,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -49,7 +51,6 @@ public class CourseDetails extends AppCompatActivity {
     String instructorName;
     String instructorPhone;
     String instructorEmail;
-    String notes;
     int courseId;
     int termId;
     Course course;
@@ -149,8 +150,16 @@ public class CourseDetails extends AppCompatActivity {
 
         });
 
-    }
+        FloatingActionButton fab = findViewById(R.id.floatingActionButton3);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CourseDetails.this, AssessmentDetails.class);
+                startActivity(intent);
+            }
+        });
 
+    }
 
     private void updateLabelStart() {
         String myFormat = "MM/dd/yy"; //In which you need put here
@@ -164,6 +173,7 @@ public class CourseDetails extends AppCompatActivity {
         return true;
     }
 
+    @SuppressLint("NonConstantResourceId")
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
@@ -171,10 +181,11 @@ public class CourseDetails extends AppCompatActivity {
                 return true;
             case R.id.delete:
                 for (Course course : repository.getAllCourses()) {
-                    if (course.getCourseId() == courseId)
+                    if (course.getCourseId() == courseId) {
                         currentCourse = course;
                         repository.delete(currentCourse);
                         Toast.makeText(CourseDetails.this, currentCourse.getTitle() + " was deleted", Toast.LENGTH_LONG).show();
+                    }
                 }
                 return true;
             case R.id.share:
@@ -196,7 +207,7 @@ public class CourseDetails extends AppCompatActivity {
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
-                Long trigger = myDate.getTime();
+                Long trigger = myDate != null ? myDate.getTime() : 0;
                 Intent intent = new Intent(CourseDetails.this, MyReceiver.class);
                 intent.putExtra("key", dateFromScreen + " should trigger");
                 PendingIntent sender = PendingIntent.getBroadcast(CourseDetails.this, ++MainActivity.numAlert, intent, PendingIntent.FLAG_IMMUTABLE);
@@ -213,7 +224,7 @@ public class CourseDetails extends AppCompatActivity {
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
-                Long trigger2 = myDate2.getTime();
+                Long trigger2 = myDate2 != null ? myDate2.getTime(): 0;
                 Intent intent2 = new Intent(CourseDetails.this, MyReceiver.class);
                 intent2.putExtra("key", dateFromScreen2 + " should trigger");
                 PendingIntent sender2 = PendingIntent.getBroadcast(CourseDetails.this, ++MainActivity.numAlert, intent2, PendingIntent.FLAG_IMMUTABLE);

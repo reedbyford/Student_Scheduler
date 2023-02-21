@@ -34,7 +34,8 @@
                     android:id="@+id/coursetitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="@string/chemistry" />
+                    android:hint="@string/chemistry"
+                    android:inputType="text" />
 
             </LinearLayout>
 
@@ -52,7 +53,8 @@
                     android:id="@+id/coursestartdate"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:hint="@string/_03_31_22" />
+                    android:hint="@string/_03_31_22"
+                    android:inputType= "date" />
             </LinearLayout>
 
             <LinearLayout
@@ -69,7 +71,8 @@
                     android:id="@+id/courseenddate"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:hint="@string/_04_31_22" />
+                    android:hint="@string/_04_31_22"
+                    android:inputType="date" />
             </LinearLayout>
 
             <LinearLayout
@@ -86,7 +89,8 @@
                     android:id="@+id/coursestatus"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:hint="@string/completed" />
+                    android:hint="@string/completed"
+                    android:inputType="text" />
             </LinearLayout>
 
             <LinearLayout
@@ -97,13 +101,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Instructor Name" />
+                    android:text="@string/instructor_name" />
 
                 <EditText
                     android:id="@+id/courseinstructorname"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:hint="Name" />
+                    android:hint="@string/name"
+                    android:inputType="text" />
             </LinearLayout>
 
             <LinearLayout
@@ -114,13 +119,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Instructor Phone" />
+                    android:text="@string/instructor_phone" />
 
                 <EditText
                     android:id="@+id/courseinstructorphone"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:hint="123-456-7890" />
+                    android:hint="@string/_123_456_7890"
+                    android:inputType="phone" />
             </LinearLayout>
 
             <LinearLayout
@@ -131,13 +137,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Instructor Email" />
+                    android:text="@string/instructor_email" />
 
                 <EditText
                     android:id="@+id/courseinstructoremail"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:hint="Email" />
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress" />
             </LinearLayout>
 
 
@@ -160,13 +167,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Edit Notes" />
+                    android:text="@string/edit_notes" />
 
                 <EditText
                     android:id="@+id/editnotes"
                     android:layout_width="350dp"
                     android:layout_height="200dp"
-                    android:hint="@string/note" />
+                    android:hint="@string/note"
+                    android:inputType="textLongMessage" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -176,7 +184,7 @@
                 <Spinner
                     android:id="@+id/spinner"
                     android:layout_width="409dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     tools:layout_editor_absoluteX="1dp"
                     tools:layout_editor_absoluteY="373dp" />
 
@@ -192,6 +200,7 @@
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/baseline_add_24" />
+        app:srcCompat="@drawable/baseline_add_24"
+        android:contentDescription="@string/add_course_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

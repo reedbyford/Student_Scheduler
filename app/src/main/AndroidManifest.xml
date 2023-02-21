@@ -17,6 +17,11 @@
             android:exported="true"></receiver>
 
         <activity
+            android:name=".UI.AssessmentDetails"
+            android:exported="false"
+            android:label="Assessment"
+            android:parentActivityName=".UI.CourseDetails" />
+        <activity
             android:name=".UI.CourseDetails"
             android:exported="false"
             android:label="Course Details"
@@ -28,7 +33,7 @@
         <activity
             android:name=".UI.TermDetails"
             android:exported="false"
-            android:label="Term Details and Course List"
+            android:label="Term Details"
             android:parentActivityName=".UI.TermList" />
         <activity
             android:name=".UI.TermList"

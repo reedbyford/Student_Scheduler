@@ -18,4 +18,27 @@
     <string name="edit_note">Edit Note</string>
     <string name="note">note</string>
     <string name="course_title">Course Title</string>
+    <string name="set_end_date_alert">Set End Date Alert</string>
+    <string name="set_start_date_alert">Set Start Date Alert</string>
+    <string name="delete_course">Delete Course</string>
+    <string name="name">Name</string>
+    <string name="instructor_name">Instructor Name</string>
+    <string name="instructor_phone">Instructor Phone</string>
+    <string name="_123_456_7890">123-456-7890</string>
+    <string name="instructor_email">Instructor Email</string>
+    <string name="email">Email</string>
+    <string name="edit_notes">Edit Notes</string>
+    <string name="add_course_button">Add Course Button</string>
+    <string name="_02_28_2023">02-28-2023</string>
+    <string name="term_end_date">Term End Date</string>
+    <string name="_09_01_2022">09-01-2022</string>
+    <string name="term_start_date">Term Start Date</string>
+    <string name="term_one">Term One</string>
+    <string name="term_title">Term Title</string>
+    <string name="textview">TextView</string>
+    <string name="performance_assessment">Performance Assessment</string>
+    <string name="assessment_title">Assessment Title</string>
+    <string name="abm2">ABM2</string>
+    <string name="assessment_start_date">Assessment Start Date</string>
+    <string name="assessment_end_date">Assessment End Date</string>
 </resources>

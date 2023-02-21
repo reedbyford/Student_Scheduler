@@ -1,4 +1,4 @@
-package android.reedbyford.studentscheduler.UI;
+/*package android.reedbyford.studentscheduler.UI;
 
 import android.content.Context;
 import android.content.Intent;
@@ -78,5 +78,5 @@ public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.As
         return mAssessments.size();
     }
 }
-
+*/
 

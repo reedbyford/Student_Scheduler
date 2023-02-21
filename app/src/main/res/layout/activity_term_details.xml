@@ -31,13 +31,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Term Title" />
+                    android:text="@string/term_title" />
 
                 <EditText
                     android:id="@+id/termtitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Term One" />
+                    android:hint="@string/term_one" />
             </LinearLayout>
 
             <LinearLayout
@@ -48,13 +48,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Term Start Date" />
+                    android:text="@string/term_start_date" />
 
                 <EditText
                     android:id="@+id/termstartdate"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
-                    android:hint="09-01-2022" />
+                    android:hint="@string/_09_01_2022" />
             </LinearLayout>
 
             <LinearLayout
@@ -65,13 +65,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Term End Date" />
+                    android:text="@string/term_end_date" />
 
                 <EditText
                     android:id="@+id/termenddate"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
-                    android:hint="02-28-2023" />
+                    android:hint="@string/_02_28_2023" />
             </LinearLayout>
 
             <androidx.appcompat.widget.LinearLayoutCompat

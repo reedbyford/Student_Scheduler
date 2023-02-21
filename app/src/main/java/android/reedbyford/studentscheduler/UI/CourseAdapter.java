@@ -1,5 +1,6 @@
 package android.reedbyford.studentscheduler.UI;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.reedbyford.studentscheduler.R;
@@ -57,8 +58,9 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
         return new CourseViewHolder(itemView);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
-    public void onBindViewHolder(@NonNull CourseAdapter.CourseViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CourseViewHolder holder, int position) {
         if(mCourses != null){
             Course current = mCourses.get(position);
             String title = current.getTitle();
@@ -71,6 +73,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void setCourses(List<Course> courses){
         mCourses = courses;
         notifyDataSetChanged();

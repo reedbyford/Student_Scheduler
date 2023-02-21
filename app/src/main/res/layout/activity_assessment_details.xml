@@ -7,7 +7,7 @@
     tools:context=".UI.CourseDetails">
 
     <ScrollView
-        android:id="@+id/scrollView2"
+        android:id="@+id/scrollView3"
         android:layout_width="392dp"
         android:layout_height="394dp"
         android:orientation="vertical"
@@ -28,13 +28,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Assessment Title" />
+                    android:text="Assessment Type" />
 
                 <EditText
-                    android:id="@+id/assessmenttitle"
+                    android:id="@+id/assessmenttype"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="ABM2" />
+                    android:hint="@string/performance_assessment" />
 
             </LinearLayout>
 
@@ -46,7 +46,25 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Assessment Start Date" />
+                    android:text="@string/assessment_title" />
+
+                <EditText
+                    android:id="@+id/assessmenttitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/abm2" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/assessment_start_date" />
 
                 <EditText
                     android:id="@+id/assessmentstartdate"
@@ -63,7 +81,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Assessment End Date" />
+                    android:text="@string/assessment_end_date" />
 
                 <EditText
                     android:id="@+id/assessmentenddate"
