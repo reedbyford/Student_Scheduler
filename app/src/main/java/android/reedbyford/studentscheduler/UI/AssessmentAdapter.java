@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.reedbyford.studentscheduler.R;
 import android.reedbyford.studentscheduler.entities.Assessment;
-import android.reedbyford.studentscheduler.entities.Course;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class AssessmentAdapter {
+public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.AssessmentViewHolder>{
     class AssessmentViewHolder extends RecyclerView.ViewHolder {
         private final TextView assessmentItemView;
         private final TextView assessmentItemView2;
