@@ -22,6 +22,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -35,15 +36,24 @@ public class CourseDetails extends AppCompatActivity {
     EditText editEndDate;
     EditText editStatus;
     EditText editNote;
+    EditText editInstructorName;
+    EditText editInstructorPhone;
+    EditText editInstructorEmail;
+    EditText editNotes;
     DatePickerDialog.OnDateSetListener datePickerStartDate;
     final Calendar myCalendarStart = Calendar.getInstance();
     String title;
     String startDate;
     String endDate;
     String status;
+    String instructorName;
+    String instructorPhone;
+    String instructorEmail;
+    String notes;
     int courseId;
     int termId;
     Course course;
+    Course currentCourse;
     Repository repository;
 
     @Override
@@ -54,7 +64,10 @@ public class CourseDetails extends AppCompatActivity {
         editStartDate = findViewById(R.id.coursestartdate);
         editEndDate = findViewById(R.id.courseenddate);
         editStatus = findViewById(R.id.coursestatus);
-        editNote = findViewById(R.id.editnote);
+        editInstructorName = findViewById(R.id.courseinstructorname);
+        editInstructorPhone = findViewById(R.id.courseinstructorphone);
+        editInstructorEmail = findViewById(R.id.courseinstructoremail);
+        editNotes = findViewById(R.id.editnotes);
         String myFormat = "MM/dd/yy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
         editStartDate.setText(sdf.format(new Date()));
@@ -65,6 +78,12 @@ public class CourseDetails extends AppCompatActivity {
         status = getIntent().getStringExtra("status");
         termId = getIntent().getIntExtra("termId", -1);
         editTitle.setText(title);
+        editStartDate.setText(startDate);
+        editEndDate.setText(endDate);
+        editStatus.setText(status);
+        editInstructorName.setText(instructorName);
+        editInstructorPhone.setText(instructorPhone);
+        editInstructorEmail.setText(instructorEmail);
         repository = new Repository(getApplication());
         Spinner spinner = findViewById(R.id.spinner);
         ArrayAdapter<Term> termArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, repository.getAllTerms());
@@ -72,28 +91,28 @@ public class CourseDetails extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                editNote.setText(termArrayAdapter.getItem(i).toString());
+                editNotes.setText(termArrayAdapter.getItem(i).toString());
             }
 
             @SuppressLint("SetTextI18n")
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-                editNote.setText("Nothing Selected");
+                editNotes.setText("Nothing Selected");
             }
         });
         Button button = findViewById(R.id.savecourse);
-        /*button.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (courseId == -1) {
-                    course = new Course(0, editTitle.getText().toString(), editStartDate.getText().toString(), editEndDate.getText().toString(), editStatus.getText().toString());
+                    course = new Course(0, editTitle.getText().toString(), editStartDate.getText().toString(), editEndDate.getText().toString(), editStatus.getText().toString(), editInstructorName.getText().toString(), editInstructorPhone.getText().toString(), editInstructorEmail.getText().toString(), editNotes.getText().toString(), 1);
                     repository.insert(course);
                 } else {
-                    course = new Course(courseId, editTitle.getText().toString(), editStartDate.getText().toString(), editEndDate.getText().toString(), editStatus.getText().toString());
+                    course = new Course(courseId, editTitle.getText().toString(), editStartDate.getText().toString(), editEndDate.getText().toString(), editStatus.getText().toString(), editInstructorName.getText().toString(), editInstructorPhone.getText().toString(), editInstructorEmail.getText().toString(), editNotes.getText().toString(), 1);
                     repository.update(course);
                 }
             }
-        });*/
+        });
         editStartDate.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -150,6 +169,14 @@ public class CourseDetails extends AppCompatActivity {
             case android.R.id.home:
                 this.finish();
                 return true;
+            case R.id.delete:
+                for (Course course : repository.getAllCourses()) {
+                    if (course.getCourseId() == courseId)
+                        currentCourse = course;
+                        repository.delete(currentCourse);
+                        Toast.makeText(CourseDetails.this, currentCourse.getTitle() + " was deleted", Toast.LENGTH_LONG).show();
+                }
+                return true;
             case R.id.share:
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
@@ -177,9 +204,24 @@ public class CourseDetails extends AppCompatActivity {
                 alarmManager.set(AlarmManager.RTC_WAKEUP, trigger, sender);
                 return true;
             case R.id.notifyend:
-                // will need more code
+                String dateFromScreen2 = editEndDate.getText().toString();
+                String myFormat2 = "MM/dd/yy";
+                SimpleDateFormat sdf2 = new SimpleDateFormat(myFormat2, Locale.US);
+                Date myDate2 = null;
+                try {
+                    myDate = sdf2.parse(dateFromScreen2);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                Long trigger2 = myDate2.getTime();
+                Intent intent2 = new Intent(CourseDetails.this, MyReceiver.class);
+                intent2.putExtra("key", dateFromScreen2 + " should trigger");
+                PendingIntent sender2 = PendingIntent.getBroadcast(CourseDetails.this, ++MainActivity.numAlert, intent2, PendingIntent.FLAG_IMMUTABLE);
+                AlarmManager alarmManager2 = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                alarmManager2.set(AlarmManager.RTC_WAKEUP, trigger2, sender2);
                 return true;
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

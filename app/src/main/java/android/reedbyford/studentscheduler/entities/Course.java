@@ -14,26 +14,26 @@ public class Course {
     private String startDate;
     private String endDate;
     private String status;
+    private String instructorName;
+    private String instructorPhone;
+    private String instructorEmail;
+    private String notes;
     private int termId;
-    @Ignore
-    private List<Instructor> instructors;
-    @Ignore
-    private List<Assessment> assessments;
-    @Ignore
-    private List<Note> notes;
 
-    public Course(int courseId, String title, String startDate, String endDate, String status, int termId, List<Instructor> instructors, List<Assessment> assessments, List<Note> notes) {
+    public Course(int courseId, String title, String startDate, String endDate, String status, String instructorName, String instructorPhone, String instructorEmail, String notes, int termId) {
         this.courseId = courseId;
         this.title = title;
         this.startDate = startDate;
         this.endDate = endDate;
         this.status = status;
-        this.termId = termId;
-        this.instructors = instructors;
-        this.assessments = assessments;
+        this.instructorName = instructorName;
+        this.instructorPhone = instructorPhone;
+        this.instructorEmail = instructorEmail;
         this.notes = notes;
+        this.termId = termId;
     }
 
+    @Ignore
     public Course() {
 
     }
@@ -86,27 +86,35 @@ public class Course {
         this.termId = termId;
     }
 
-    public List<Instructor> getInstructors() {
-        return instructors;
+    public String getInstructorName() {
+        return instructorName;
     }
 
-    public void setInstructors(List<Instructor> instructors) {
-        this.instructors = instructors;
+    public void setInstructorName(String instructorName) {
+        this.instructorName = instructorName;
     }
 
-    public List<Assessment> getAssessments() {
-        return assessments;
+    public String getInstructorPhone() {
+        return instructorPhone;
     }
 
-    public void setAssessments(List<Assessment> assessments) {
-        this.assessments = assessments;
+    public void setInstructorPhone(String instructorPhone) {
+        this.instructorPhone = instructorPhone;
     }
 
-    public List<Note> getNotes() {
+    public String getInstructorEmail() {
+        return instructorEmail;
+    }
+
+    public void setInstructorEmail(String instructorEmail) {
+        this.instructorEmail = instructorEmail;
+    }
+
+    public String getNotes() {
         return notes;
     }
 
-    public void setNotes(List<Note> notes) {
+    public void setNotes(String notes) {
         this.notes = notes;
     }
 }

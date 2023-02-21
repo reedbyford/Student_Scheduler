@@ -3,12 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/delete"
+        android:title="Delete Course" />
+    <item
         android:id="@+id/share"
-        android:title="@string/share" />
+        android:title="Share Course Notes" />
     <item
         android:id="@+id/notifystart"
-        android:title="@string/notify_start" />
+        android:title="Set Start Date Alert" />
     <item
         android:id="@+id/notifyend"
-        android:title="@string/notify_end" />
+        android:title="Set End Date Alert" />
 </menu>

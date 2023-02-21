@@ -101,7 +101,7 @@ public class TermDetails extends AppCompatActivity {
         //Toast.makeText(ProductDetails.this,"refresh list",Toast.LENGTH_LONG).show();
     }
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.deletecourse, menu);
+        getMenuInflater().inflate(R.menu.deleteterm, menu);
         return true;
     }
     public boolean onOptionsItemSelected(MenuItem item) {

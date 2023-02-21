@@ -8,8 +8,8 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="392dp"
-        android:layout_height="394dp"
+        android:layout_width="402dp"
+        android:layout_height="727dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,6 +89,57 @@
                     android:hint="@string/completed" />
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Instructor Name" />
+
+                <EditText
+                    android:id="@+id/courseinstructorname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:hint="Name" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Instructor Phone" />
+
+                <EditText
+                    android:id="@+id/courseinstructorphone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:hint="123-456-7890" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Instructor Email" />
+
+                <EditText
+                    android:id="@+id/courseinstructoremail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:hint="Email" />
+            </LinearLayout>
+
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="wrap_content"
@@ -103,35 +154,18 @@
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/date_picker" />
+                    android:text="Edit Notes" />
 
                 <EditText
-                    android:id="@+id/editdate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:hint="@string/_12_17_2022"
-                    android:inputType="none" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/edit_note" />
-
-                <EditText
-                    android:id="@+id/editnote"
+                    android:id="@+id/editnotes"
                     android:layout_width="350dp"
-                    android:layout_height="50dp"
+                    android:layout_height="200dp"
                     android:hint="@string/note" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -150,5 +184,14 @@
         </LinearLayout>
 
     </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/baseline_add_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
