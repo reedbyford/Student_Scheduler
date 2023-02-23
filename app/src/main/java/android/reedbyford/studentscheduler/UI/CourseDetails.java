@@ -1,6 +1,8 @@
 package android.reedbyford.studentscheduler.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.app.AlarmManager;
@@ -11,6 +13,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.reedbyford.studentscheduler.R;
 import android.reedbyford.studentscheduler.database.Repository;
+import android.reedbyford.studentscheduler.entities.Assessment;
 import android.reedbyford.studentscheduler.entities.Course;
 import android.reedbyford.studentscheduler.entities.Term;
 import android.view.Menu;
@@ -28,8 +31,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 public class CourseDetails extends AppCompatActivity {
@@ -77,6 +82,9 @@ public class CourseDetails extends AppCompatActivity {
         startDate = getIntent().getStringExtra("startDate");
         endDate = getIntent().getStringExtra("endDate");
         status = getIntent().getStringExtra("status");
+        instructorName = getIntent().getStringExtra("instructorName");
+        instructorPhone = getIntent().getStringExtra("instructorPhone");
+        instructorEmail = getIntent().getStringExtra("instructorEmail");
         termId = getIntent().getIntExtra("termId", -1);
         editTitle.setText(title);
         editStartDate.setText(startDate);
@@ -86,6 +94,15 @@ public class CourseDetails extends AppCompatActivity {
         editInstructorPhone.setText(instructorPhone);
         editInstructorEmail.setText(instructorEmail);
         repository = new Repository(getApplication());
+        RecyclerView recyclerView = findViewById(R.id.assessmentrecyclerview);
+        final AssessmentAdapter assessmentAdapter = new AssessmentAdapter(this);
+        recyclerView.setAdapter(assessmentAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        List<Assessment> filteredAssessments = new ArrayList<>();
+        for(Assessment a : repository.getAllAssessments()) {
+            if(a.getCourseId() == courseId) filteredAssessments.add(a);
+        }
+        assessmentAdapter.setAssessments(repository.getAllAssessments());
         Spinner spinner = findViewById(R.id.spinner);
         ArrayAdapter<Term> termArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, repository.getAllTerms());
         spinner.setAdapter(termArrayAdapter);

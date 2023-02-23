@@ -1,4 +1,4 @@
-/*package android.reedbyford.studentscheduler.UI;
+package android.reedbyford.studentscheduler.UI;
 
 import android.content.Context;
 import android.content.Intent;
@@ -27,7 +27,7 @@ public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.As
                 public void onClick(View view) {
                     int position = getAdapterPosition();
                     final Assessment current = mAssessments.get(position);
-                    Intent intent = new Intent(context,CourseDetails.class);
+                    Intent intent = new Intent(context,AssessmentDetails.class);
                     intent.putExtra("id", current.getAssessmentId());
                     intent.putExtra("type", current.getType());
                     intent.putExtra("title", current.getTitle());
@@ -78,5 +78,4 @@ public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.As
         return mAssessments.size();
     }
 }
-*/
 

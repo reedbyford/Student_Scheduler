@@ -13,5 +13,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         tools:layout_editor_absoluteX="99dp"
-        tools:layout_editor_absoluteY="112dp" />
+        tools:layout_editor_absoluteY="112dp"
+        tools:ignore="HardcodedText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

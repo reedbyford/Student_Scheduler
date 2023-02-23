@@ -53,7 +53,6 @@ public class TermDetails extends AppCompatActivity {
         editEndDate.setText(endDate);
         repository = new Repository(getApplication());
         RecyclerView recyclerView = findViewById(R.id.courserecyclerview);
-        repository = new Repository(getApplication());
         final CourseAdapter courseAdapter = new CourseAdapter(this);
         recyclerView.setAdapter(courseAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
